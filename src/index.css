@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @keyframes dropRotate {
+    0% {
+      transform: translateY(-50vh) rotate(0deg); /* Start above the screen */
+    }
+    100% {
+      transform: translateY(20vh) rotate(360deg); /* End at the bottom of the screen */
+    }
+  }
+  @keyframes glitter {
+    0%, 100% {
+        background-color: rgba(255, 255, 0, 0.3);
+        box-shadow: 0 0 20px 10px rgba(255, 174, 0, 0.5);
+    }
+    50% {
+        background-color: rgba(255, 255, 0, 0.6);
+        box-shadow: 0 0 90px 100px rgba(255, 255, 0, 0.8);
+    }
+}
+
+.animate-glitter {
+    animation: glitter 2s linear infinite;
+}
+
+.winnerCard::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 0, 0.3);
+    border-radius: 50%;
+    border: none;
+    animation: glitter 2s linear infinite;
+}
